@@ -15,11 +15,12 @@
         type="text"
         placeholder="Add New Item"
         #newItem
-        (keydown.enter)="addNewItem(newItem)"
+        (keydown.enter)="addNewItem()"
+        [(ngModel)]="newItemText"
       />
     </div>
     <div class="col-2">
-      <button class="btn btn-dark" (click)="addNewItem(newItem)">Add</button>
+      <button class="btn btn-dark" (click)="addNewItem()">Add</button>
     </div>
   </div>
 

@@ -9,6 +9,7 @@ export class ListComponent implements OnInit {
   products: string[];
   errors: string;
   newItem: HTMLInputElement;
+  newItemText: string;
 
   constructor() {}
 
@@ -16,16 +17,15 @@ export class ListComponent implements OnInit {
     this.products = ['Milk', 'Honey'];
   }
 
-  addNewItem(el:HTMLInputElement): void {
-    
-    let val: string = el.value;
+  addNewItem(): void {
+    let val: string = this.newItemText;
 
     if (!val) return;
     else if (this.products.indexOf(val) > -1)
       this.errors = 'Item already in list';
     else {
       this.products.push(val);
-      el.value = '';
+      this.newItemText = '';
       this.errors = '';
     }
   } // addNewItem()
